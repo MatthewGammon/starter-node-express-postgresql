@@ -103,7 +103,7 @@ async function destroy(req, res, next) {
 // }
 
 async function list(req, res, next) {
-  await suppliersService.list();
+  const data = await suppliersService.list();
   res.json({ data });
 }
 
