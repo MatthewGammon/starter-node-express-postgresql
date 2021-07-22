@@ -102,6 +102,11 @@ async function destroy(req, res, next) {
 //     .catch(next);
 // }
 
+async function list(req, res, next) {
+  await suppliersService.list();
+  res.json({ data });
+}
+
 module.exports = {
   hasValidFields,
   create: [hasValidFields, hasRequiredProperties, asyncErrorBoundary(create)],
@@ -112,4 +117,5 @@ module.exports = {
     asyncErrorBoundary(update),
   ],
   delete: [asyncErrorBoundary(supplierExists), asyncErrorBoundary(destroy)],
+  list,
 };

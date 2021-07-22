@@ -20,4 +20,14 @@ module.exports = {
       directory: './src/db/migrations',
     },
   },
+  production: {
+    client: 'postgresql',
+    connection: URL,
+    seeds: {
+      directory: './src/db/seeds',
+    },
+    migrations: {
+      directory: './src/db/migrations',
+    },
+  },
 };
